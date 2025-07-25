@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الصفحة الرئيسية | موقعي الشخصي
+</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #000);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    nav {
+      background: rgba(0,0,0,0.6);
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .container {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: #ffd700;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffa500;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      font-size: 14px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="works.html">أعمالي</a>
+    <a href="tools.html">برامجي</a>
+    <a href="contact.html">تواصل معي</a>
+  </nav>
+
+  <div class="container">
+    <h1>أهلاً بك في موقعي الشخصي</h1>
+    <p>
+      أنا سعيد حامد عباس
+     أنا مطوّر ومبدع في مجال البرمجة والتصميم. في هذا الموقع أشاركك أعمالي، وأدواتي البرمجية، وأوفر وسيلة للتواصل المباشر معي.
+      <br><br>
+      تصفّح الموقع واكتشف المزيد من المهارات والأفكار اللي قد تفيدك.
+    </p>
+    <a class="btn" href="works.html">شاهد أعمالي</a>
+  </div>
+
+  <footer>
+    &copy; 2025 - تصميم وبرمجة خاصة 💻
+  </footer>
+
+</body>
+</html>

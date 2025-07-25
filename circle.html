@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حساب مساحة الدائرة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #000);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #ffd700;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #ffa500;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    a {
+      display: block;
+      margin-top: 40px;
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #ffa500;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>حساب مساحة الدائرة</h1>
+
+  <input type="number" id="radius" placeholder="أدخل نصف القطر (r)" />
+  <br>
+  <button onclick="calculateArea()">احسب المساحة</button>
+
+  <div class="result" id="result"></div>
+
+  <a href="tools.html">العودة إلى صفحة الأدوات</a>
+
+  <script>
+    function calculateArea() {
+      const r = parseFloat(document.getElementById('radius').value);
+      if (isNaN(r)) {
+        document.getElementById('result').textContent = 'يرجى إدخال قيمة صحيحة.';
+        return;
+      }
+      const area = Math.PI * r * r;
+      document.getElementById('result').textContent = 'مساحة الدائرة هي: ' + area.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حل معادلة من الدرجة الثانية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #000);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #ffd700;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #ffa500;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    a {
+      display: block;
+      margin-top: 40px;
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #ffa500;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>حل معادلة من الدرجة الثانية</h1>
+
+  <input type="number" id="a" placeholder="القيمة a" />
+  <br>
+  <input type="number" id="b" placeholder="القيمة b" />
+  <br>
+  <input type="number" id="c" placeholder="القيمة c" />
+  <br>
+  <button onclick="solveQuadratic()">احسب الحل</button>
+
+  <div class="result" id="result"></div>
+
+  <a href="tools.html">العودة إلى صفحة الأدوات</a>
+
+  <script>
+    function solveQuadratic() {
+      const a = parseFloat(document.getElementById('a').value);
+      const b = parseFloat(document.getElementById('b').value);
+      const c = parseFloat(document.getElementById('c').value);
+
+      if (isNaN(a) || isNaN(b) || isNaN(c) || a === 0) {
+        document.getElementById('result').textContent = 'يرجى إدخال قيم صحيحة (a ≠ 0).';
+        return;
+      }
+
+      const discriminant = b * b - 4 * a * c;
+
+      if (discriminant > 0) {
+        const x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        const x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+        document.getElementById('result').textContent =
+          'المعادلة لها حلان: x1 = ' + x1.toFixed(2) + ' و x2 = ' + x2.toFixed(2);
+      } else if (discriminant === 0) {
+        const x = -b / (2 * a);
+        document.getElementById('result').textContent = 'المعادلة لها حل واحد: x = ' + x.toFixed(2);
+      } else {
+        document.getElementById('result').textContent = 'لا يوجد حلول حقيقية (المميز < 0).';
+      }
+    }
+  </script>
+
+</body>
+</html>
